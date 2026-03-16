@@ -1,0 +1,140 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 230px;
+  height: 100vh;
+  background: white;
+  border-right: 1px solid #e0e0e0;
+  padding: 10px 0;
+  box-sizing: border-box;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: width 0.25s ease;
+}
+.top-header {
+  z-index: 1000;
+}
+
+/* Collapsed mode */
+.sidebar.collapsed {
+  width: 80px;
+}
+
+/* Scrollbar hidden */
+.sidebar::-webkit-scrollbar {
+  width: 0px;
+}
+
+.sidebar:hover::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: #c4c4c4;
+  border-radius: 10px;
+}
+
+/* Firefox */
+.sidebar {
+  scrollbar-width: none;
+}
+
+.sidebar:hover {
+  scrollbar-width: thin;
+}
+
+/* Top area */
+.sidebar-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 20px 10px 20px;
+  /*margin-bottom: 10px;*/
+}
+
+.sidebar-toggle {
+  background: transparent;
+  border: none;
+  outline: none;          /* remove focus outline */
+  box-shadow: none;       /* remove focus shadow */
+  cursor: pointer;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sidebar-toggle:active {
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+
+.sidebar-logo {
+  font-size: 24px;
+  font-weight: 800;
+  color: #1a5cff;
+   margin: 0;
+}
+
+/* Sidebar items */
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  padding: 14px 20px;
+  cursor: pointer;
+  color: #333;
+  font-size: 15px;
+  transition: background 0.2s;
+}
+
+.sidebar-item:hover {
+  background: #f5f5f5;
+}
+
+.sidebar-divider {
+  border: none;
+  border-top: 1px solid #e5e5e5;
+  margin: 12px 0;
+}
+
+.icon {
+  margin-right: 12px;
+  font-size: 18px;
+  color: black;
+  min-width: 22px;
+}
+
+.sidebar-text {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.new-badge {
+  background: #ff2d55;
+  color: white;
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+/* Hide text when collapsed */
+.sidebar.collapsed .label {
+  display: none;
+}
+
+/* Center icons when collapsed */
+.sidebar.collapsed .sidebar-item {
+  justify-content: center;
+  padding: 14px 0;
+}
+
+.sidebar.collapsed .icon {
+  margin-right: 0;
+}
+
+.sidebar.collapsed .sidebar-divider {
+  margin: 12px 14px;
+}

@@ -1,0 +1,104 @@
+/* Full background */
+.coming-wrapper {
+  height: 100vh;
+  background: linear-gradient(135deg, #1a5cff, #4f8cff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Decorative circles */
+.decor {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.25;
+}
+
+.decor1 {
+  width: 300px;
+  height: 300px;
+  background: white;
+  top: -80px;
+  left: -80px;
+}
+
+.decor2 {
+  width: 250px;
+  height: 250px;
+  background: #00e0ff;
+  bottom: -60px;
+  right: -60px;
+}
+
+/* Main card */
+.coming-card {
+  background: white;
+  padding: 50px 40px;
+  border-radius: 20px;
+  text-align: center;
+  width: 420px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
+  animation: fadeUp 0.8s ease;
+}
+
+.coming-card h1 {
+  margin: 15px 0 0;
+  font-size: 26px;
+  color: #1a5cff;
+}
+
+.coming-card h2 {
+  margin: 5px 0 15px;
+  font-size: 22px;
+  color: #333;
+}
+
+.coming-card p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Phone mockup */
+.phone-mockup {
+  width: 120px;
+  height: 220px;
+  margin: 0 auto 15px;
+  border: 6px solid #1a5cff;
+  border-radius: 25px;
+  position: relative;
+}
+
+.screen {
+  width: 100%;
+  height: 100%;
+  background: #f5f7ff;
+  border-radius: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Spinner */
+.spinner {
+  width: 35px;
+  height: 35px;
+  border: 4px solid #ddd;
+  border-top: 4px solid #1a5cff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Animations */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}

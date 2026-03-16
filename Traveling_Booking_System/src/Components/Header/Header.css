@@ -1,0 +1,169 @@
+.top-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #fff;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.header-inner {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 0 18px;
+}
+
+/* Left */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 210px;
+}
+
+.icon-btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: transparent;
+  border-radius: 10px;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+}
+
+.icon-btn:hover {
+  background: #f5f6f7;
+}
+
+.brand {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: baseline;
+}
+
+.brand-trip { color: #1a5cff; }
+.brand-dot { color: #ffc107; margin: 0 1px; }
+.brand-com { color: #1a5cff; }
+
+/* Center */
+.header-center {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.search {
+  width: 350px;
+  height: 40px;
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  display: flex;
+  overflow: hidden;
+}
+
+.search input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 0 14px;
+  font-size: 14px;
+}
+
+.search-btn {
+  width: 48px;
+  border: none;
+  background: #1a5cff;
+  color: #fff;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.usd-text {
+  font-weight: 600;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #1a5cff;   /* blue */
+}
+
+.nav-link:hover .usd-icon {
+  color: #1a5cff;
+}
+
+.nav-link:hover .usd-text {
+  color: #1a5cff;
+}
+
+.search-btn:hover {
+  background: #134ae6;
+}
+
+/* Right */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  white-space: nowrap;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #1f1f1f;
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 10px;
+}
+
+.nav-link:hover {
+  background: #f5f6f7;
+}
+.usd-icon {
+  color: #1a5cff;  /* Trip blue */
+}
+.primary-btn {
+  border: none;
+  background: #1a5cff;
+  color: #fff;
+  height: 40px;
+  padding: 0 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.primary-btn:hover {
+  background: #134ae6;
+}
+
+/* Responsive: hide some links on small screens */
+@media (max-width: 1050px) {
+  .header-right a:nth-child(2),
+  .header-right a:nth-child(4),
+  .header-right a:nth-child(5) {
+    display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .header-left { min-width: auto; }
+  .header-right { gap: 10px; }
+  .nav-link span { display: none; }
+  .primary-btn { padding: 0 10px; }
+}
