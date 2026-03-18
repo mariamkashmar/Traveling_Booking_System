@@ -3,6 +3,7 @@ import SideBar from '../Components/SideBar/SideBar'
 import Tab from '../Components/Tab/Tab'
 import NewUserOffers from '../Components/NewUserOffers/NewUserOffers'
 import Header from '../Components/Header/Header'
+import Deals from '../Components/Deals/Deals'
 function Home() {
     return (
         <>
@@ -12,6 +13,7 @@ function Home() {
                 <Hero />
                 <Tab />
                 <NewUserOffers />
+                <Deals/>
             </div>
         </>
     )

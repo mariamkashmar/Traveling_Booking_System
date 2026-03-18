@@ -1,0 +1,525 @@
+* {
+  box-sizing: border-box;
+}
+
+.trains-page {
+  background: #f5f7fb;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  color: #1f2937;
+}
+
+.trains-hero {
+  background: linear-gradient(135deg, #0f4c81, #3b82f6);
+  padding: 80px 0 120px;
+}
+
+.trains-hero-overlay {
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+.trains-hero h1 {
+  color: white;
+  font-size: 42px;
+  margin: 0 0 10px;
+  font-weight: 700;
+}
+
+.trains-hero p {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 17px;
+  margin-bottom: 30px;
+}
+
+.train-search-card {
+  background: white;
+  border-radius: 22px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
+  padding: 24px;
+  overflow: visible;
+}
+
+.train-trip-types {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+}
+
+.train-trip-btn {
+  border: 1px solid #dbe3f0;
+  background: #f8fafc;
+  color: #374151;
+  padding: 11px 18px;
+  border-radius: 999px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.train-trip-btn.active {
+  background: #0d6efd;
+  color: white;
+  border-color: #0d6efd;
+}
+
+.train-trip-btn:hover {
+  transform: translateY(-1px);
+}
+
+.train-form {
+  display: grid;
+  grid-template-columns: 1.2fr auto 1.2fr 1fr 1.1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.train-form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.train-form-group label {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.train-input-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #d9e1ec;
+  border-radius: 14px;
+  background: #fff;
+  padding: 14px 14px;
+  min-height: 54px;
+}
+
+.train-input-icon {
+  color: #0d6efd;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.train-input-box input,
+.train-input-box select {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 15px;
+  background: transparent;
+  color: #111827;
+}
+
+.train-swap-btn {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: none;
+  background: #eef4ff;
+  color: #0d6efd;
+  cursor: pointer;
+  align-self: center;
+  margin-top: 28px;
+  font-size: 16px;
+  transition: 0.25s ease;
+}
+
+.train-swap-btn:hover {
+  transform: rotate(180deg);
+  background: #dce9ff;
+}
+
+.train-form-footer {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 22px;
+  flex-wrap: wrap;
+}
+
+.train-checkbox-area {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #4b5563;
+  font-size: 14px;
+}
+
+.train-search-btn {
+  margin-left: auto;
+  background: linear-gradient(135deg, #ff8a00, #ff6a00);
+  color: white;
+  border: none;
+  min-width: 160px;
+  height: 54px;
+  padding: 0 26px;
+  font-size: 17px;
+  font-weight: 700;
+  border-radius: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 10px 24px rgba(255, 122, 0, 0.28);
+  transition: all 0.25s ease;
+}
+
+.train-search-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(255, 122, 0, 0.35);
+  background: linear-gradient(135deg, #ff9500, #ff6a00);
+}
+
+.train-search-btn:active {
+  transform: translateY(0);
+}
+
+.passenger-train-group {
+  position: relative;
+}
+
+.passenger-train-trigger {
+  cursor: pointer;
+  user-select: none;
+}
+
+.passenger-train-trigger span {
+  font-size: 15px;
+  color: #111827;
+  white-space: nowrap;
+}
+
+.train-passenger-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 300px;
+  background: #fff;
+  border: 1px solid #d9e1ec;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  padding: 14px;
+  z-index: 9999;
+}
+
+.train-passenger-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #eef2f7;
+}
+
+.train-passenger-row:last-of-type {
+  border-bottom: none;
+}
+
+.train-passenger-row h4 {
+  margin: 0 0 4px;
+  font-size: 14px;
+  color: #111827;
+}
+
+.train-passenger-row p {
+  margin: 0;
+  font-size: 12px;
+  color: #64748b;
+}
+
+.train-counter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.train-counter button {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid #2563eb;
+  background: white;
+  color: #2563eb;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.train-counter button:hover {
+  background: #eff6ff;
+}
+
+.train-counter button:disabled {
+  border-color: #cbd5e1;
+  color: #94a3b8;
+  cursor: not-allowed;
+  background: white;
+}
+
+.train-counter span {
+  min-width: 18px;
+  text-align: center;
+  font-size: 16px;
+  color: #111827;
+  font-weight: 500;
+}
+
+.train-class-select {
+  width: 100%;
+  margin-top: 12px;
+  height: 42px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 0 14px;
+  font-size: 14px;
+  outline: none;
+  background: white;
+}
+
+.train-offers-section {
+  background: white;
+  padding: 60px 80px;
+  margin-top: -40px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+.train-offers-section h2,
+.popular-routes-section h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #111827;
+}
+
+.train-offers-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 18px;
+}
+
+.train-offer-card {
+  border-radius: 22px;
+  overflow: hidden;
+  min-height: 170px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.train-offer-card.large {
+  background: linear-gradient(135deg, #123a73, #2563eb);
+  color: white;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.train-offer-text h3 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.train-offer-text p {
+  font-size: 15px;
+  margin-bottom: 18px;
+  opacity: 0.92;
+}
+
+.train-offer-text button {
+  background: white;
+  color: #0d4fd7;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.train-offer-card.small {
+  color: white;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.train-offer-card.orange {
+  background: linear-gradient(135deg, #f59e0b, #ef4444);
+}
+
+.train-offer-card.green {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.train-offer-card.purple {
+  background: linear-gradient(135deg, #8b5cf6, #6366f1);
+}
+
+.train-offer-card.small h4 {
+  margin: 0 0 8px;
+  font-size: 20px;
+}
+
+.train-offer-card.small p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.popular-routes-section {
+  max-width: 1250px;
+  margin: 55px auto 0;
+  padding: 0 20px;
+}
+
+.popular-routes-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.route-card {
+  background: white;
+  border-radius: 20px;
+  padding: 22px;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.07);
+  transition: 0.25s ease;
+}
+
+.route-card:hover {
+  transform: translateY(-5px);
+}
+
+.route-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.route-top h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.route-top span {
+  color: #0d6efd;
+  font-weight: 700;
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+.route-card p {
+  margin: 0 0 10px;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.train-benefits-section {
+  max-width: 1250px;
+  margin: 55px auto 70px;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.train-benefit-card {
+  background: white;
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.06);
+  text-align: center;
+}
+
+.train-benefit-icon {
+  font-size: 30px;
+  color: #0d6efd;
+  margin-bottom: 14px;
+}
+
+.train-benefit-card h4 {
+  margin: 0 0 10px;
+  font-size: 20px;
+}
+
+.train-benefit-card p {
+  margin: 0;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+@media (max-width: 1150px) {
+  .train-form {
+    grid-template-columns: 1fr 60px 1fr;
+  }
+
+  .train-offers-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .train-offer-card.large {
+    grid-column: 1 / -1;
+  }
+
+  .popular-routes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .train-benefits-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .trains-hero {
+    padding: 45px 15px 90px;
+  }
+
+  .trains-hero h1 {
+    font-size: 32px;
+  }
+
+  .train-search-card {
+    padding: 18px;
+  }
+
+  .train-form {
+    grid-template-columns: 1fr;
+  }
+
+  .train-swap-btn {
+    width: 44px;
+    height: 44px;
+    margin: 0 auto;
+  }
+
+  .train-form-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .train-search-btn {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .train-offers-grid,
+  .popular-routes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .train-passenger-dropdown {
+    width: 100%;
+    left: 0;
+    right: auto;
+  }
+}

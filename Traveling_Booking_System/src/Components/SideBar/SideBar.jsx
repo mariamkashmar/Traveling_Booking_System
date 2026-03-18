@@ -31,20 +31,20 @@ export default function Sidebar() {
         <span className="label">Flights</span>
       </Link>
 
-      <div className="sidebar-item">
+      <Link to='/Trains' className="sidebar-item">
         <FaTrain className="icon" />
         <span className="label">Trains</span>
-      </div>
+      </Link>
 
-      <div className="sidebar-item">
+      <Link to='/Cars' className="sidebar-item">
         <FaCar className="icon" />
         <span className="label">Cars</span>
-      </div>
+      </Link>
 
-      <div className="sidebar-item">
+      <Link to='/AttractionsandTours' className="sidebar-item">
         <FaMapMarkedAlt className="icon" />
         <span className="label">Attractions & Tours</span>
-      </div>
+      </Link>
 
       <hr className="sidebar-divider" />
 
@@ -60,12 +60,12 @@ export default function Sidebar() {
 
       <hr className="sidebar-divider" />
 
-      <div className="sidebar-item">
+      <Link to='./TravelGuides' className="sidebar-item">
         <FaRoute className="icon" />
         <span className="label sidebar-text">
-          Trip.Planner <span className="new-badge">New</span>
+          Travel Guide <span className="new-badge">New</span>
         </span>
-      </div>
+      </Link>
 
       <div className="sidebar-item">
         <FaGlobe className="icon" />
@@ -83,10 +83,10 @@ export default function Sidebar() {
         <span className="label">Map</span>
       </div>
 
-      <div className="sidebar-item" >
+      <Link to='/Packages' className="sidebar-item" >
         <FaGift className="icon" />
-        <span className="label">Deals</span>
-      </div>
+        <span className="label">Packages</span>
+      </Link>
 
       <hr className="sidebar-divider" />
 

@@ -1,0 +1,436 @@
+* {
+  box-sizing: border-box;
+}
+
+.cars-page {
+  background: #f5f7fb;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  color: #1f2937;
+}
+
+.cars-hero {
+  background: linear-gradient(135deg, #0f4c81, #3b82f6);
+  padding: 80px 0 120px;
+}
+
+.cars-hero-overlay {
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+.cars-hero h1 {
+  color: white;
+  font-size: 42px;
+  margin: 0 0 10px;
+  font-weight: 700;
+}
+
+.cars-hero p {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 17px;
+  margin-bottom: 30px;
+}
+
+.cars-search-card {
+  background: white;
+  border-radius: 22px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
+  padding: 24px;
+  position: relative;
+  overflow: visible;
+}
+
+.cars-top-options {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+  position: relative;
+}
+
+.cars-check-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #4b5563;
+  font-size: 14px;
+}
+
+.driver-age-box {
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1px solid #d9e1ec;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  color: #111827;
+  background: #fff;
+}
+
+.driver-age-arrow {
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.driver-age-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 240px;
+  width: 150px;
+  background: white;
+  border: 1px solid #d9e1ec;
+  border-radius: 14px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
+  padding: 8px;
+  z-index: 999;
+}
+
+.driver-age-dropdown button {
+  width: 100%;
+  border: none;
+  background: transparent;
+  text-align: left;
+  padding: 10px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #111827;
+}
+
+.driver-age-dropdown button:hover {
+  background: #f1f5f9;
+}
+
+.cars-form {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 0.8fr 1fr 0.8fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.cars-form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.cars-form-group label {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.cars-input-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #d9e1ec;
+  border-radius: 14px;
+  background: #fff;
+  padding: 14px 14px;
+  min-height: 54px;
+}
+
+.cars-input-icon {
+  color: #0d6efd;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.cars-input-box input,
+.cars-input-box select {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 15px;
+  background: transparent;
+  color: #111827;
+}
+
+.cars-form-footer {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 22px;
+  flex-wrap: wrap;
+}
+
+.cars-search-btn {
+  margin-left: auto;
+  background: linear-gradient(135deg, #ff8a00, #ff6a00);
+  color: white;
+  border: none;
+  min-width: 170px;
+  height: 54px;
+  padding: 0 26px;
+  font-size: 17px;
+  font-weight: 700;
+  border-radius: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 10px 24px rgba(255, 122, 0, 0.28);
+  transition: all 0.25s ease;
+}
+
+.cars-search-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(255, 122, 0, 0.35);
+  background: linear-gradient(135deg, #ff9500, #ff6a00);
+}
+
+.cars-search-btn:active {
+  transform: translateY(0);
+}
+
+.cars-offers-section {
+  background: white;
+  padding: 60px 80px;
+  margin-top: -40px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+.cars-offers-section h2,
+.cars-types-section h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #111827;
+}
+
+.cars-offers-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 18px;
+}
+
+.cars-offer-card {
+  border-radius: 22px;
+  overflow: hidden;
+  min-height: 170px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.cars-offer-card.large {
+  background: linear-gradient(135deg, #152c5b, #2453c3);
+  color: white;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.cars-offer-text h3 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.cars-offer-text p {
+  font-size: 15px;
+  margin-bottom: 18px;
+  opacity: 0.92;
+}
+
+.cars-offer-text button {
+  background: white;
+  color: #0d4fd7;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.cars-offer-card.small {
+  color: white;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.cars-offer-card.orange {
+  background: linear-gradient(135deg, #f59e0b, #ef4444);
+}
+
+.cars-offer-card.green {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.cars-offer-card.purple {
+  background: linear-gradient(135deg, #8b5cf6, #6366f1);
+}
+
+.cars-offer-card.small h4 {
+  margin: 0 0 8px;
+  font-size: 20px;
+}
+
+.cars-offer-card.small p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.cars-types-section {
+  max-width: 1250px;
+  margin: 55px auto 0;
+  padding: 0 20px;
+}
+
+.cars-types-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.car-type-card {
+  background: white;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.07);
+  transition: 0.25s ease;
+}
+
+.car-type-card:hover {
+  transform: translateY(-5px);
+}
+
+.car-type-icon-wrap {
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
+  background: #eef4ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.car-type-icon {
+  font-size: 24px;
+  color: #0d6efd;
+}
+
+.car-type-card h3 {
+  margin: 0 0 10px;
+  font-size: 21px;
+}
+
+.car-type-card p {
+  margin: 0 0 14px;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+.car-type-card span {
+  color: #0d6efd;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.cars-benefits-section {
+  max-width: 1250px;
+  margin: 55px auto 70px;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.cars-benefit-card {
+  background: white;
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.06);
+  text-align: center;
+}
+
+.cars-benefit-icon {
+  font-size: 30px;
+  color: #0d6efd;
+  margin-bottom: 14px;
+}
+
+.cars-benefit-card h4 {
+  margin: 0 0 10px;
+  font-size: 20px;
+}
+
+.cars-benefit-card p {
+  margin: 0;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+@media (max-width: 1150px) {
+  .cars-form {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .cars-location-group {
+    grid-column: 1 / -1;
+  }
+
+  .cars-offers-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .cars-offer-card.large {
+    grid-column: 1 / -1;
+  }
+
+  .cars-types-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cars-benefits-section {
+    grid-template-columns: 1fr;
+  }
+
+  .driver-age-dropdown {
+    left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .cars-hero {
+    padding: 45px 15px 90px;
+  }
+
+  .cars-hero h1 {
+    font-size: 32px;
+  }
+
+  .cars-search-card {
+    padding: 18px;
+  }
+
+  .cars-form {
+    grid-template-columns: 1fr;
+  }
+
+  .cars-form-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cars-search-btn {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .cars-offers-grid,
+  .cars-types-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .driver-age-dropdown {
+    width: 100%;
+    left: 0;
+  }
+}

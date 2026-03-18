@@ -8,6 +8,14 @@ import SupportCustomer from './Pages/SupportCustomer'
 import AuthPage from './Pages/AuthPage'
 import Aboutus from './Pages/Aboutus'
 import Flight from './Pages/Flight'
+import Train from './Pages/Train'
+import Car from './Pages/Car'
+import AttractionandTour from './Pages/AttractionandTour'
+import TravelGuide from './Pages/TravelGuide'
+import Package from './Pages/Package'
+import Book from './Pages/Book'
+import Favorite from './Pages/Favorite'
+
 function App() {
   return (
     <BrowserRouter>
@@ -20,6 +28,13 @@ function App() {
         <Route path='/SignPage' element={<AuthPage />} />
         <Route path='/AboutUs' element={<Aboutus />} />
         <Route path='/Flights' element={<Flight />} />
+        <Route path='/Trains' element={<Train />} />
+        <Route path='/Cars' element={<Car />} />
+        <Route path='/AttractionsandTours' element={<AttractionandTour />} />
+        <Route path='/TravelGuides' element={<TravelGuide />} />
+        <Route path='/Packages' element={<Package />} />
+        <Route path='/BookNow' element={<Book />} />
+        <Route path='/Favorites' element={<Favorite />} />
 
 
 

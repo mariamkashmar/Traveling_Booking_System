@@ -22,7 +22,7 @@ export default function Header() {
               type="text"
               placeholder="Destination, attraction, hotel, etc"
             />
-            <button className="search-btn" aria-label="search">
+            <button className="search-button" aria-label="search">
               <FaSearch />
             </button>
           </div>

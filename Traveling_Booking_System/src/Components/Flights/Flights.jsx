@@ -1,4 +1,5 @@
 import "./Flights.css";
+import { useState } from 'react';
 import {
   FaPlaneDeparture,
   FaPlaneArrival,
@@ -10,7 +11,15 @@ import {
   FaMapMarkerAlt,
 } from "react-icons/fa";
 
+
+
 export default function Flights() {
+  const [toggle, setToggle] = useState("round");
+  const [showPassengers, setShowPassengers] = useState(false);
+  const [adults, setAdults] = useState(3);
+  const [children, setChildren] = useState(0);
+  const [infants, setInfants] = useState(0);
+  const [cabinClass, setCabinClass] = useState("Economy");
   return (
     <div className="flights-page">
       {/* Hero */}
@@ -21,10 +30,11 @@ export default function Flights() {
 
           <div className="search-card">
             {/* Trip type */}
+
             <div className="trip-types">
-              <button className="trip-btn active">Round-trip</button>
-              <button className="trip-btn">One-way</button>
-              <button className="trip-btn">Multi-city</button>
+              <button className={`trip-btn ${toggle === "round" ? "active" : ""} `} onClick={() => setToggle("round")}>Round-trip</button>
+              <button className={`trip-btn ${toggle === "one" ? "active" : ""} `} onClick={() => setToggle("one")}>One-way</button>
+              <button className={`trip-btn ${toggle === "multi" ? "active" : ""}`} onClick={() => setToggle("multi")}>Multi-city</button>
             </div>
 
             {/* Form */}
@@ -65,30 +75,115 @@ export default function Flights() {
                 </div>
               </div>
 
-              <div className="form-group">
+              <div className="form-group passenger-group">
                 <label>Passengers</label>
-                <div className="input-box">
+
+                <div
+                  className="input-box passenger-trigger"
+                  onClick={() => setShowPassengers(!showPassengers)}
+                >
                   <FaUserFriends className="input-icon" />
-                  <select>
-                    <option>1 Adult, Economy</option>
-                    <option>2 Adults, Economy</option>
-                    <option>Family, Economy</option>
-                    <option>Business Class</option>
-                  </select>
+                  <span>
+                    {adults + children + infants} Passenger{adults + children + infants > 1 ? "s" : ""}, {cabinClass}
+                  </span>
                 </div>
+
+                {showPassengers && (
+                  <div className="passenger-dropdown">
+                    <p className="passenger-note">
+                      Please select the exact number of passengers to view the best prices
+                    </p>
+
+                    <div className="passenger-row">
+                      <div>
+                        <h4>Adults</h4>
+                        <p>12+ years old</p>
+                      </div>
+                      <div className="counter">
+                        <button
+                          type="button"
+                          disabled={adults <= 1}
+                          onClick={() => setAdults(Math.max(1, adults - 1))}
+                        >
+                          −
+                        </button>
+                        <span>{adults}</span>
+                        <button
+                          type="button"
+                          onClick={() => setAdults(adults + 1)}
+                        >
+                          +
+                        </button>
+                      </div>
+                    </div>
+
+                    <div className="passenger-row">
+                      <div>
+                        <h4>Children</h4>
+                        <p>2–11 years old</p>
+                      </div>
+                      <div className="counter">
+                        <button
+                          type="button"
+                          disabled={children <= 0}
+                          onClick={() => setChildren(Math.max(0, children - 1))}
+                        >
+                          −
+                        </button>
+                        <span>{children}</span>
+                        <button
+                          type="button"
+                          onClick={() => setChildren(children + 1)}
+                        >
+                          +
+                        </button>
+                      </div>
+                    </div>
+
+                    <div className="passenger-row">
+                      <div>
+                        <h4>Infants on lap</h4>
+                        <p>Under 2 years old</p>
+                      </div>
+                      <div className="counter">
+                        <button
+                          type="button"
+                          disabled={infants <= 0}
+                          onClick={() => setInfants(Math.max(0, infants - 1))}
+                        >
+                          −
+                        </button>
+                        <span>{infants}</span>
+                        <button
+                          type="button"
+                          onClick={() => setInfants(infants + 1)}
+                        >
+                          +
+                        </button>
+                      </div>
+                    </div>
+
+                    <select
+                      className="cabin-select"
+                      value={cabinClass}
+                      onChange={(e) => setCabinClass(e.target.value)}
+                    >
+                      <option>Economy</option>
+                      <option>Premium Economy</option>
+                      <option>Business</option>
+                      <option>First Class</option>
+                    </select>
+                  </div>
+                )}
               </div>
+
+
+
+
+
             </div>
 
             <div className="form-footer">
-              <label className="checkbox-area">
-                <input type="checkbox" />
-                <span>Direct flights only</span>
-              </label>
-
-              <label className="checkbox-area">
-                <input type="checkbox" />
-                <span>Special fares</span>
-              </label>
 
               <button className="search-btn">
                 <FaSearch />
@@ -105,9 +200,8 @@ export default function Flights() {
         <div className="promo-grid">
           <div className="promo-card large">
             <div className="promo-text">
-              <h3>Save more on international flights</h3>
-              <p>Book early and enjoy exclusive discounts on top routes.</p>
-              <button>View Deals</button>
+              <h3>Your next adventure starts here</h3>
+              <p>Fly to your dream destinations at the best prices.</p>
             </div>
           </div>
 
@@ -162,7 +256,7 @@ export default function Flights() {
 
           <div className="destination-card">
             <img
-            src="https://upload.wikimedia.org/wikipedia/commons/5/55/Istanbul_skyline.jpg"
+              src="/Istanbul/istanbul.jpg"
               alt="Istanbul"
             />
             <div className="destination-info">
