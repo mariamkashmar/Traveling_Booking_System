@@ -143,18 +143,17 @@ The application includes several main sections:
 
 The application includes several pages, some of them:
 
-### Home Page
-![Home Page](./Screenshots/HomePage.png)
+### Home
+![Home Page](Traveling_Booking_System/Screenshots/HomePage.png)
 
-### Packages Page
-![Packages](./Screenshots/PackagesPage.png)
+### Packages
+![Packages](Traveling_Booking_System/Screenshots/PackagesPage.png)
 
-### Flights Page
-![Flights](./Screenshots/FlightsPage.png)
+### Flights
+![Flights](Traveling_Booking_System/Screenshots/FlightsPage.png)
 
-### Customer Support
-![Customer Support](./Screenshots/CustomerSupportPage.png)
-
+### Customer
+![Customer Support](Traveling_Booking_System/Screenshots/CustomerSupportPage.png)
 
 ---
 
