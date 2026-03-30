@@ -18,6 +18,7 @@
   font-size: 32px;
   font-weight: 700;
   color: #111827;
+  line-height: 1.2;
 }
 
 .home-block-header p {
@@ -97,7 +98,6 @@
   background: white;
   color: #1d4ed8;
   padding: 11px 18px;
-  border-radius: 14px;
   font-size: 15px;
   font-weight: 700;
   transition: all 0.25s ease;
@@ -179,32 +179,28 @@
   background: #1d4ed8;
   color: white;
 }
+
 .deals-note {
   text-align: center;
   margin-top: 14px;
   font-size: 14px;
   color: #6b7280;
 }
+
 .deals-center-box {
   margin-top: 40px;
   padding: 40px 30px;
   border-radius: 24px;
   text-align: center;
-
-  background: linear-gradient(135deg, #f8fafc, #eef2ff);
-  border: 1px solid #e5e7eb;
-
-  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.06);
 }
 
-/* title */
 .deals-center-box h3 {
   margin: 0 0 12px;
   font-size: 28px;
   color: #111827;
+  line-height: 1.2;
 }
 
-/* description */
 .deals-center-box p {
   margin: 0 0 20px;
   font-size: 16px;
@@ -212,7 +208,6 @@
   line-height: 1.7;
 }
 
-/* trust line */
 .deals-trust {
   margin-top: 16px;
   font-size: 14px;
@@ -223,17 +218,34 @@
   flex-wrap: wrap;
 }
 
-/* RESPONSIVE */
+/* LARGE TABLETS */
 @media (max-width: 1100px) {
+  .home-sections-wrap {
+    width: min(1320px, 94%);
+  }
+
   .home-hotdeals-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 
   .home-why-grid {
     grid-template-columns: 1fr 1fr;
   }
+
+  .home-block-header h2 {
+    font-size: 30px;
+  }
+
+  .home-hotdeal-overlay h3 {
+    font-size: 25px;
+  }
+
+  .home-why-card h3 {
+    font-size: 22px;
+  }
 }
 
+/* TABLETS */
 @media (max-width: 768px) {
   .home-sections-wrap {
     width: min(94%, 100%);
@@ -244,6 +256,10 @@
     margin-bottom: 44px;
   }
 
+  .home-block-header {
+    margin-bottom: 18px;
+  }
+
   .home-block-header h2 {
     font-size: 28px;
   }
@@ -252,8 +268,14 @@
     font-size: 15px;
   }
 
+  .home-hotdeals-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
   .home-hotdeal-card {
     min-height: 230px;
+    border-radius: 20px;
   }
 
   .home-hotdeal-overlay {
@@ -264,22 +286,92 @@
     font-size: 24px;
   }
 
+  .home-hotdeal-overlay p {
+    font-size: 15px;
+    margin-bottom: 16px;
+  }
+
+  .home-deal-btn {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+
   .home-why-grid {
     grid-template-columns: 1fr;
+    gap: 18px;
   }
 
   .home-why-card {
     padding: 24px 18px;
+    border-radius: 20px;
+  }
+
+  .home-why-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
   }
 
   .home-why-card h3 {
     font-size: 22px;
   }
+
+  .home-why-card p {
+    font-size: 15px;
+  }
+
+  .deals-more-btn {
+    padding: 12px 24px;
+    font-size: 15px;
+  }
+
+  .deals-center-box {
+    margin-top: 32px;
+    padding: 30px 20px;
+    border-radius: 20px;
+  }
+
+  .deals-center-box h3 {
+    font-size: 24px;
+  }
+
+  .deals-center-box p {
+    font-size: 15px;
+  }
 }
 
+/* SMALL PHONES */
 @media (max-width: 480px) {
+  .home-sections-wrap {
+    width: 95%;
+    margin: 24px auto 46px;
+  }
+
+  .home-block {
+    margin-bottom: 36px;
+  }
+
   .home-block-header h2 {
-    font-size: 25px;
+    font-size: 24px;
+  }
+
+  .home-block-header p {
+    font-size: 14px;
+  }
+
+  .home-hotdeal-card {
+    min-height: 210px;
+    border-radius: 18px;
+  }
+
+  .home-hotdeal-overlay {
+    padding: 16px;
+  }
+
+  .home-deal-badge {
+    font-size: 12px;
+    padding: 7px 12px;
+    margin-bottom: 12px;
   }
 
   .home-hotdeal-overlay h3 {
@@ -288,6 +380,51 @@
 
   .home-hotdeal-overlay p,
   .home-why-card p {
-    font-size: 15px;
+    font-size: 14px;
+  }
+
+  .home-deal-btn {
+    width: 100%;
+    text-align: center;
+    padding: 10px 14px;
+  }
+
+  .home-why-card {
+    padding: 20px 16px;
+  }
+
+  .home-why-card h3 {
+    font-size: 20px;
+  }
+
+  .deals-footer {
+    margin-top: 20px;
+  }
+
+  .deals-more-btn {
+    width: 100%;
+    text-align: center;
+    padding: 12px 18px;
+  }
+
+  .deals-note {
+    font-size: 13px;
+  }
+
+  .deals-center-box {
+    padding: 24px 16px;
+  }
+
+  .deals-center-box h3 {
+    font-size: 21px;
+  }
+
+  .deals-center-box p {
+    font-size: 14px;
+  }
+
+  .deals-trust {
+    gap: 10px;
+    font-size: 13px;
   }
 }

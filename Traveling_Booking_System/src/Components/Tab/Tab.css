@@ -1,52 +1,105 @@
 .tabs-wrapper {
-    display: flex;
-    justify-content: center;
-    margin-top: -25px;
-    position: relative;
-    z-index: 100;
+  display: flex;
+  justify-content: center;
+  margin-top: -25px;
+  position: relative;
+  z-index: 100;
+  padding: 0 12px;
 }
 
 .tabs-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    gap: 50px;
-    /* ✅ more width between words */
-    background: rgba(47, 53, 66, 0.92);
-
-    padding: 6px 70px;
-    /* ✅ less height, more width */
-    border-radius: 40px;
-
-    width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  background: rgba(47, 53, 66, 0.92);
+  padding: 6px 70px;
+  border-radius: 40px;
+  width: fit-content;
+  max-width: 100%;
+  flex-wrap: wrap;
 }
 
 .tab {
-    background: transparent;
-    border: none;
-    outline: none;
-    box-shadow: none;
-    color: white;
-    padding: 6px 18px;
-    /* ✅ smaller vertical padding */
-    border-radius: 20px;
-    cursor: pointer;
-
-    font-size: 14px;
-    /* slightly smaller text */
-    white-space: nowrap;
+  background: transparent;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  color: white;
+  padding: 6px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  white-space: nowrap;
 }
 
 .tab:focus,
 .tab:focus-visible {
-    outline: none;
-    /* remove blue/black focus ring */
-    box-shadow: none;
+  outline: none;
+  box-shadow: none;
 }
 
 .tab.active {
-    background: white;
-    color: black;
-    font-weight: 600;
+  background: white;
+  color: black;
+  font-weight: 600;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .tabs-container {
+    gap: 24px;
+    padding: 8px 28px;
+    border-radius: 30px;
+  }
+
+  .tab {
+    padding: 6px 14px;
+    font-size: 13px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .tabs-wrapper {
+    margin-top: -18px;
+    padding: 0 10px;
+  }
+
+  .tabs-container {
+    width: 100%;
+    max-width: 100%;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: 22px;
+    justify-content: center;
+  }
+
+  .tab {
+    flex: 1 1 calc(50% - 12px);
+    text-align: center;
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .tabs-wrapper {
+    margin-top: -14px;
+    padding: 0 8px;
+  }
+
+  .tabs-container {
+    gap: 8px;
+    padding: 8px;
+    border-radius: 18px;
+  }
+
+  .tab {
+    flex: 1 1 100%;
+    font-size: 13px;
+    padding: 10px;
+    border-radius: 14px;
+  }
 }

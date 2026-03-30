@@ -9,7 +9,6 @@ export const getFavorites = () => {
 
 export const toggleFavoritePackage = (pkg) => {
   const favorites = getFavorites();
-
   const exists = favorites.some((item) => item.id === pkg.id);
 
   let updatedFavorites;

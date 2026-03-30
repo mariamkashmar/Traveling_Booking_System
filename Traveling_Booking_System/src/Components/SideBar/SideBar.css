@@ -1,17 +1,19 @@
 .sidebar {
   position: fixed;
-  top: 0;
+  top: 64px;
   left: 0;
   width: 230px;
-  height: 100vh;
+  height: calc(100vh - 64px);
   background: white;
   border-right: 1px solid #e0e0e0;
   padding: 10px 0;
   box-sizing: border-box;
   overflow-y: auto;
   overflow-x: hidden;
-  transition: width 0.25s ease;
+  transition: width 0.25s ease, transform 0.25s ease;
+  z-index: 999;
 }
+
 .top-header {
   z-index: 1000;
 }
@@ -50,20 +52,21 @@
   align-items: center;
   gap: 12px;
   padding: 0 20px 10px 20px;
-  /*margin-bottom: 10px;*/
 }
 
 .sidebar-toggle {
   background: transparent;
   border: none;
-  outline: none;          /* remove focus outline */
-  box-shadow: none;       /* remove focus shadow */
+  outline: none;
+  box-shadow: none;
   cursor: pointer;
   font-size: 22px;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
+
 .sidebar-toggle:active {
   outline: none;
   box-shadow: none;
@@ -74,7 +77,8 @@
   font-size: 24px;
   font-weight: 800;
   color: #1a5cff;
-   margin: 0;
+  margin: 0;
+  white-space: nowrap;
 }
 
 /* Sidebar items */
@@ -103,12 +107,18 @@
   font-size: 18px;
   color: black;
   min-width: 22px;
+  flex-shrink: 0;
 }
 
 .sidebar-text {
   display: flex;
   align-items: center;
   gap: 8px;
+  min-width: 0;
+}
+
+.label {
+  white-space: nowrap;
 }
 
 .new-badge {
@@ -118,6 +128,7 @@
   padding: 2px 6px;
   border-radius: 12px;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 /* Hide text when collapsed */
@@ -137,4 +148,104 @@
 
 .sidebar.collapsed .sidebar-divider {
   margin: 12px 14px;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .sidebar.collapsed {
+    width: 72px;
+  }
+
+  .sidebar-logo {
+    font-size: 22px;
+  }
+
+  .sidebar-item {
+    padding: 13px 16px;
+    font-size: 14px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .sidebar {
+    top: 64px;
+    width: 100%;
+    height: auto;
+    max-height: calc(100vh - 64px);
+    border-right: none;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 8px 0;
+    transform: translateY(0);
+  }
+
+  .sidebar.collapsed {
+    width: 100%;
+    height: auto;
+  }
+
+  .sidebar-top {
+    padding: 0 16px 8px;
+  }
+
+  .sidebar-logo {
+    font-size: 20px;
+  }
+
+  .sidebar-item {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+
+  .sidebar.collapsed .label {
+    display: inline;
+  }
+
+  .sidebar.collapsed .sidebar-item {
+    justify-content: flex-start;
+    padding: 12px 16px;
+  }
+
+  .sidebar.collapsed .icon {
+    margin-right: 12px;
+  }
+
+  .sidebar.collapsed .sidebar-divider {
+    margin: 10px 0;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .sidebar-top {
+    gap: 10px;
+    padding: 0 12px 8px;
+  }
+
+  .sidebar-toggle {
+    font-size: 20px;
+  }
+
+  .sidebar-logo {
+    font-size: 18px;
+  }
+
+  .sidebar-item {
+    padding: 11px 12px;
+    font-size: 13px;
+  }
+
+  .icon {
+    font-size: 17px;
+    min-width: 20px;
+  }
+
+  .new-badge {
+    font-size: 10px;
+    padding: 2px 5px;
+  }
 }

@@ -7,6 +7,8 @@
   min-height: 100vh;
   font-family: Arial, sans-serif;
   color: #1f2937;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .trains-hero {
@@ -15,7 +17,7 @@
 }
 
 .trains-hero-overlay {
-  max-width: 1250px;
+  width: min(1250px, 92%);
   margin: 0 auto;
 }
 
@@ -24,12 +26,14 @@
   font-size: 42px;
   margin: 0 0 10px;
   font-weight: 700;
+  line-height: 1.2;
 }
 
 .trains-hero p {
   color: rgba(255, 255, 255, 0.92);
   font-size: 17px;
   margin-bottom: 30px;
+  line-height: 1.6;
 }
 
 .train-search-card {
@@ -38,6 +42,7 @@
   box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
   padding: 24px;
   overflow: visible;
+  width: 100%;
 }
 
 .train-trip-types {
@@ -78,6 +83,7 @@
 .train-form-group {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .train-form-group label {
@@ -94,8 +100,9 @@
   border: 1px solid #d9e1ec;
   border-radius: 14px;
   background: #fff;
-  padding: 14px 14px;
+  padding: 14px;
   min-height: 54px;
+  width: 100%;
 }
 
 .train-input-icon {
@@ -109,6 +116,7 @@
   border: none;
   outline: none;
   width: 100%;
+  min-width: 0;
   font-size: 15px;
   background: transparent;
   color: #111827;
@@ -126,6 +134,7 @@
   margin-top: 28px;
   font-size: 16px;
   transition: 0.25s ease;
+  flex-shrink: 0;
 }
 
 .train-swap-btn:hover {
@@ -198,7 +207,7 @@
   position: absolute;
   top: calc(100% + 8px);
   right: 0;
-  width: 300px;
+  width: min(300px, 90vw);
   background: #fff;
   border: 1px solid #d9e1ec;
   border-radius: 14px;
@@ -211,6 +220,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 12px;
   padding: 10px 0;
   border-bottom: 1px solid #eef2f7;
 }
@@ -235,6 +245,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  flex-shrink: 0;
 }
 
 .train-counter button {
@@ -286,8 +297,9 @@
 
 .train-offers-section {
   background: white;
-  padding: 60px 80px;
-  margin-top: -40px;
+  width: min(1250px, 100%);
+  margin: -40px auto 0;
+  padding: 60px 24px;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
 }
@@ -297,6 +309,7 @@
   font-size: 28px;
   margin-bottom: 20px;
   color: #111827;
+  line-height: 1.3;
 }
 
 .train-offers-grid {
@@ -323,12 +336,14 @@
 .train-offer-text h3 {
   font-size: 28px;
   margin-bottom: 10px;
+  line-height: 1.25;
 }
 
 .train-offer-text p {
   font-size: 15px;
   margin-bottom: 18px;
   opacity: 0.92;
+  line-height: 1.6;
 }
 
 .train-offer-text button {
@@ -364,17 +379,18 @@
 .train-offer-card.small h4 {
   margin: 0 0 8px;
   font-size: 20px;
+  line-height: 1.25;
 }
 
 .train-offer-card.small p {
   margin: 0;
   font-size: 14px;
+  line-height: 1.5;
 }
 
 .popular-routes-section {
-  max-width: 1250px;
+  width: min(1250px, 92%);
   margin: 55px auto 0;
-  padding: 0 20px;
 }
 
 .popular-routes-grid {
@@ -406,6 +422,7 @@
 .route-top h3 {
   margin: 0;
   font-size: 20px;
+  line-height: 1.3;
 }
 
 .route-top span {
@@ -421,12 +438,12 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  line-height: 1.5;
 }
 
 .train-benefits-section {
-  max-width: 1250px;
+  width: min(1250px, 92%);
   margin: 55px auto 70px;
-  padding: 0 20px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
@@ -449,6 +466,7 @@
 .train-benefit-card h4 {
   margin: 0 0 10px;
   font-size: 20px;
+  line-height: 1.3;
 }
 
 .train-benefit-card p {
@@ -459,7 +477,13 @@
 
 @media (max-width: 1150px) {
   .train-form {
-    grid-template-columns: 1fr 60px 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .train-swap-btn {
+    justify-self: center;
+    align-self: center;
+    margin-top: 0;
   }
 
   .train-offers-grid {
@@ -471,7 +495,7 @@
   }
 
   .popular-routes-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .train-benefits-section {
@@ -481,15 +505,24 @@
 
 @media (max-width: 768px) {
   .trains-hero {
-    padding: 45px 15px 90px;
+    padding: 48px 0 90px;
+  }
+
+  .trains-hero-overlay {
+    width: 92%;
   }
 
   .trains-hero h1 {
     font-size: 32px;
   }
 
+  .trains-hero p {
+    font-size: 15px;
+  }
+
   .train-search-card {
     padding: 18px;
+    border-radius: 18px;
   }
 
   .train-form {
@@ -504,22 +537,100 @@
 
   .train-form-footer {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
+  }
+
+  .train-checkbox-area {
+    width: 100%;
   }
 
   .train-search-btn {
     width: 100%;
     margin-left: 0;
+    justify-content: center;
+  }
+
+  .train-offers-section {
+    padding: 42px 16px;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
   }
 
   .train-offers-grid,
   .popular-routes-grid {
     grid-template-columns: 1fr;
   }
+}
+
+@media (max-width: 480px) {
+  .trains-hero h1 {
+    font-size: 26px;
+  }
+
+  .trains-hero p {
+    font-size: 14px;
+    margin-bottom: 22px;
+  }
+
+  .train-trip-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .train-input-box {
+    padding: 12px;
+    min-height: 50px;
+  }
+
+  .train-input-box input,
+  .train-input-box select {
+    font-size: 14px;
+  }
 
   .train-passenger-dropdown {
-    width: 100%;
     left: 0;
-    right: auto;
+    right: 0;
+    width: 100%;
+  }
+
+  .train-passenger-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .train-counter {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .train-offers-section h2,
+  .popular-routes-section h2 {
+    font-size: 23px;
+  }
+
+  .train-offer-text h3 {
+    font-size: 22px;
+  }
+
+  .train-offer-card.large {
+    padding: 22px;
+  }
+
+  .train-offer-card.small {
+    min-height: 150px;
+  }
+
+  .route-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .route-top h3,
+  .train-benefit-card h4 {
+    font-size: 18px;
+  }
+
+  .train-benefit-card {
+    padding: 22px;
   }
 }

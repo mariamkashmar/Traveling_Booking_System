@@ -9,7 +9,7 @@ export default function signing() {
     <section className="auth-page">
       <div className="auth-container">
         <div className="auth-left">
-          <h1>Welcome to TravelEase</h1>
+          <h1>Welcome to Go.Trip</h1>
           <p>
             Book flights, hotels, trains, and more with comfort and confidence.
           </p>

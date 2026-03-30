@@ -90,7 +90,22 @@ export default function Deals() {
                     ))}
                 </div>
             </section>
-            <div className="deals-center-box">
+            <section className="home-block">
+                <div className="home-block-header">
+                    <h2>Why Choose Us</h2>
+                    <p>Everything you need for a smooth and trusted booking experience.</p>
+                </div>
+
+                <div className="home-why-grid">
+                    {whyChooseUs.map((item) => (
+                        <div key={item.id} className="home-why-card">
+                            <div className="home-why-icon">{item.icon}</div>
+                            <h3>{item.title}</h3>
+                            <p>{item.text}</p>
+                        </div>
+                    ))}
+                </div>
+                  <div className="deals-center-box">
                 <h3>Find Your Perfect Trip</h3>
 
                 <p>
@@ -109,22 +124,8 @@ export default function Deals() {
                 </div>
             </div>
 
-            <section className="home-block">
-                <div className="home-block-header">
-                    <h2>Why Choose Us</h2>
-                    <p>Everything you need for a smooth and trusted booking experience.</p>
-                </div>
-
-                <div className="home-why-grid">
-                    {whyChooseUs.map((item) => (
-                        <div key={item.id} className="home-why-card">
-                            <div className="home-why-icon">{item.icon}</div>
-                            <h3>{item.title}</h3>
-                            <p>{item.text}</p>
-                        </div>
-                    ))}
-                </div>
             </section>
         </div>
+        
     );
 }

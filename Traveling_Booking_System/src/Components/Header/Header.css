@@ -4,14 +4,16 @@
   z-index: 1000;
   background: #fff;
   border-bottom: 1px solid #eaeaea;
+  width: 100%;
 }
 
 .header-inner {
-  height: 64px;
+  min-height: 64px;
   display: flex;
   align-items: center;
   gap: 18px;
   padding: 0 18px;
+  width: 100%;
 }
 
 /* Left */
@@ -20,6 +22,7 @@
   align-items: center;
   gap: 14px;
   min-width: 210px;
+  flex-shrink: 0;
 }
 
 .icon-btn {
@@ -32,6 +35,7 @@
   display: grid;
   place-items: center;
   font-size: 18px;
+  flex-shrink: 0;
 }
 
 .icon-btn:hover {
@@ -44,26 +48,39 @@
   letter-spacing: -0.5px;
   display: flex;
   align-items: baseline;
+  line-height: 1;
+  white-space: nowrap;
 }
 
-.brand-trip { color: #1a5cff; }
-.brand-dot { color: #ffc107; margin: 0 1px; }
-.brand-com { color: #1a5cff; }
+.brand-trip {
+  color: #1a5cff;
+}
+
+.brand-dot {
+  color: #ffc107;
+  margin: 0 1px;
+}
+
+.brand-com {
+  color: #1a5cff;
+}
 
 /* Center */
 .header-center {
   flex: 1;
   display: flex;
   justify-content: flex-start;
+  min-width: 0;
 }
 
 .search {
-  width: 350px;
+  width: min(350px, 100%);
   height: 40px;
   border: 1px solid #dcdcdc;
   border-radius: 10px;
   display: flex;
   overflow: hidden;
+  background: #fff;
 }
 
 .search input {
@@ -72,6 +89,7 @@
   outline: none;
   padding: 0 14px;
   font-size: 14px;
+  min-width: 0;
 }
 
 .search-button {
@@ -82,34 +100,19 @@
   cursor: pointer;
   display: grid;
   place-items: center;
+  flex-shrink: 0;
+}
+
+.search-button:hover {
+  background: #134ae6;
 }
 
 .usd-text {
   font-weight: 600;
 }
 
-.nav-link {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.nav-link:hover {
-  color: #1a5cff;   /* blue */
-}
-
-.nav-link:hover .usd-icon {
+.usd-icon {
   color: #1a5cff;
-}
-
-.nav-link:hover .usd-text {
-  color: #1a5cff;
-}
-
-.search-btn:hover {
-  background: #134ae6;
 }
 
 /* Right */
@@ -118,6 +121,7 @@
   align-items: center;
   gap: 16px;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .nav-link {
@@ -129,14 +133,19 @@
   text-decoration: none;
   padding: 8px 10px;
   border-radius: 10px;
+  transition: all 0.2s ease;
 }
 
 .nav-link:hover {
   background: #f5f6f7;
+  color: #1a5cff;
 }
-.usd-icon {
-  color: #1a5cff;  /* Trip blue */
+
+.nav-link:hover .usd-icon,
+.nav-link:hover .usd-text {
+  color: #1a5cff;
 }
+
 .primary-btn {
   border: none;
   background: #1a5cff;
@@ -146,24 +155,126 @@
   border-radius: 10px;
   cursor: pointer;
   font-weight: 600;
+  flex-shrink: 0;
 }
 
 .primary-btn:hover {
   background: #134ae6;
 }
 
-/* Responsive: hide some links on small screens */
+/* Large tablets */
 @media (max-width: 1050px) {
+  .header-inner {
+    gap: 12px;
+  }
+
   .header-right a:nth-child(2),
   .header-right a:nth-child(4),
   .header-right a:nth-child(5) {
     display: none;
   }
+
+  .search {
+    width: min(260px, 100%);
+  }
 }
 
+/* Tablets */
+@media (max-width: 860px) {
+  .header-inner {
+    flex-wrap: wrap;
+    padding: 10px 16px;
+    row-gap: 10px;
+  }
+
+  .header-left {
+    min-width: auto;
+  }
+
+  .header-center {
+    order: 3;
+    width: 100%;
+    flex: 0 0 100%;
+  }
+
+  .search {
+    width: 100%;
+  }
+
+  .header-right {
+    margin-left: auto;
+    gap: 10px;
+  }
+}
+
+/* Mobile */
 @media (max-width: 720px) {
-  .header-left { min-width: auto; }
-  .header-right { gap: 10px; }
-  .nav-link span { display: none; }
-  .primary-btn { padding: 0 10px; }
+  .header-inner {
+    gap: 10px;
+  }
+
+  .brand {
+    font-size: 22px;
+  }
+
+  .header-right {
+    gap: 8px;
+  }
+
+  .nav-link {
+    padding: 8px;
+  }
+
+  .nav-link span {
+    display: none;
+  }
+
+  .primary-btn {
+    padding: 0 10px;
+    font-size: 13px;
+  }
+
+  .icon-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .header-inner {
+    padding: 10px 12px;
+  }
+
+  .brand {
+    font-size: 19px;
+  }
+
+  .header-left {
+    gap: 10px;
+  }
+
+  .search {
+    height: 38px;
+  }
+
+  .search input {
+    font-size: 13px;
+    padding: 0 10px;
+  }
+
+  .search-button {
+    width: 42px;
+  }
+
+  .header-right {
+    gap: 6px;
+  }
+
+  .primary-btn {
+    height: 36px;
+    padding: 0 9px;
+    border-radius: 8px;
+  }
 }

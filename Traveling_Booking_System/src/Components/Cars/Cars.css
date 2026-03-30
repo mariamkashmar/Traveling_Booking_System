@@ -7,6 +7,8 @@
   min-height: 100vh;
   font-family: Arial, sans-serif;
   color: #1f2937;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .cars-hero {
@@ -15,7 +17,7 @@
 }
 
 .cars-hero-overlay {
-  max-width: 1250px;
+  width: min(1250px, 92%);
   margin: 0 auto;
 }
 
@@ -24,12 +26,14 @@
   font-size: 42px;
   margin: 0 0 10px;
   font-weight: 700;
+  line-height: 1.2;
 }
 
 .cars-hero p {
   color: rgba(255, 255, 255, 0.92);
   font-size: 17px;
   margin-bottom: 30px;
+  line-height: 1.6;
 }
 
 .cars-search-card {
@@ -39,6 +43,7 @@
   padding: 24px;
   position: relative;
   overflow: visible;
+  width: 100%;
 }
 
 .cars-top-options {
@@ -69,6 +74,8 @@
   cursor: pointer;
   color: #111827;
   background: #fff;
+  width: fit-content;
+  max-width: 100%;
 }
 
 .driver-age-arrow {
@@ -80,7 +87,7 @@
   position: absolute;
   top: calc(100% + 6px);
   left: 240px;
-  width: 150px;
+  width: min(150px, 90vw);
   background: white;
   border: 1px solid #d9e1ec;
   border-radius: 14px;
@@ -115,6 +122,7 @@
 .cars-form-group {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .cars-form-group label {
@@ -131,8 +139,9 @@
   border: 1px solid #d9e1ec;
   border-radius: 14px;
   background: #fff;
-  padding: 14px 14px;
+  padding: 14px;
   min-height: 54px;
+  width: 100%;
 }
 
 .cars-input-icon {
@@ -146,6 +155,7 @@
   border: none;
   outline: none;
   width: 100%;
+  min-width: 0;
   font-size: 15px;
   background: transparent;
   color: #111827;
@@ -191,8 +201,9 @@
 
 .cars-offers-section {
   background: white;
-  padding: 60px 80px;
-  margin-top: -40px;
+  width: min(1250px, 100%);
+  margin: -40px auto 0;
+  padding: 60px 24px;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
 }
@@ -202,6 +213,7 @@
   font-size: 28px;
   margin-bottom: 20px;
   color: #111827;
+  line-height: 1.3;
 }
 
 .cars-offers-grid {
@@ -228,12 +240,14 @@
 .cars-offer-text h3 {
   font-size: 28px;
   margin-bottom: 10px;
+  line-height: 1.25;
 }
 
 .cars-offer-text p {
   font-size: 15px;
   margin-bottom: 18px;
   opacity: 0.92;
+  line-height: 1.6;
 }
 
 .cars-offer-text button {
@@ -269,17 +283,18 @@
 .cars-offer-card.small h4 {
   margin: 0 0 8px;
   font-size: 20px;
+  line-height: 1.25;
 }
 
 .cars-offer-card.small p {
   margin: 0;
   font-size: 14px;
+  line-height: 1.5;
 }
 
 .cars-types-section {
-  max-width: 1250px;
+  width: min(1250px, 92%);
   margin: 55px auto 0;
-  padding: 0 20px;
 }
 
 .cars-types-grid {
@@ -319,6 +334,7 @@
 .car-type-card h3 {
   margin: 0 0 10px;
   font-size: 21px;
+  line-height: 1.3;
 }
 
 .car-type-card p {
@@ -334,9 +350,8 @@
 }
 
 .cars-benefits-section {
-  max-width: 1250px;
+  width: min(1250px, 92%);
   margin: 55px auto 70px;
-  padding: 0 20px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
@@ -359,6 +374,7 @@
 .cars-benefit-card h4 {
   margin: 0 0 10px;
   font-size: 20px;
+  line-height: 1.3;
 }
 
 .cars-benefit-card p {
@@ -369,7 +385,7 @@
 
 @media (max-width: 1150px) {
   .cars-form {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .cars-location-group {
@@ -385,7 +401,7 @@
   }
 
   .cars-types-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .cars-benefits-section {
@@ -399,15 +415,24 @@
 
 @media (max-width: 768px) {
   .cars-hero {
-    padding: 45px 15px 90px;
+    padding: 48px 0 90px;
+  }
+
+  .cars-hero-overlay {
+    width: 92%;
   }
 
   .cars-hero h1 {
     font-size: 32px;
   }
 
+  .cars-hero p {
+    font-size: 15px;
+  }
+
   .cars-search-card {
     padding: 18px;
+    border-radius: 18px;
   }
 
   .cars-form {
@@ -416,12 +441,19 @@
 
   .cars-form-footer {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
   }
 
   .cars-search-btn {
     width: 100%;
     margin-left: 0;
+    justify-content: center;
+  }
+
+  .cars-offers-section {
+    padding: 42px 16px;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
   }
 
   .cars-offers-grid,
@@ -432,5 +464,68 @@
   .driver-age-dropdown {
     width: 100%;
     left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .cars-hero h1 {
+    font-size: 26px;
+  }
+
+  .cars-hero p {
+    font-size: 14px;
+    margin-bottom: 22px;
+  }
+
+  .cars-top-options {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .cars-check-option {
+    width: 100%;
+  }
+
+  .driver-age-box {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .cars-input-box {
+    padding: 12px;
+    min-height: 50px;
+  }
+
+  .cars-input-box input,
+  .cars-input-box select {
+    font-size: 14px;
+  }
+
+  .cars-offers-section h2,
+  .cars-types-section h2 {
+    font-size: 23px;
+  }
+
+  .cars-offer-text h3 {
+    font-size: 22px;
+  }
+
+  .cars-offer-card.large {
+    padding: 22px;
+  }
+
+  .cars-offer-card.small {
+    min-height: 150px;
+  }
+
+  .car-type-card h3,
+  .cars-benefit-card h4 {
+    font-size: 18px;
+  }
+
+  .car-type-card,
+  .cars-benefit-card {
+    padding: 22px;
   }
 }

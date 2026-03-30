@@ -476,7 +476,7 @@ export default function Packages() {
     <section className="packages-page">
       <div className="packages-hero">
         <div className="packages-hero-text">
-          <span className="packages-subtitle">Curated Travel Packages</span>
+          <span className="packages-subtitle"></span>
           <h1>Complete Trip Packages For Your Next Journey</h1>
           <p>
             Book full travel packages including flights, hotels, trains, cars,
@@ -522,6 +522,10 @@ export default function Packages() {
                 {pkg.tourType === "Private Tour" ? <FaUserTie /> : <FaUsers />}
                 {pkg.tourType}
               </span>
+
+
+
+
               <button
                 type="button"
                 className={`favorite-btn ${favorites.some((item) => item.id === pkg.id) ? "active" : ""
@@ -530,6 +534,10 @@ export default function Packages() {
               >
                 {favorites.some((item) => item.id === pkg.id) ? <FaHeart /> : <FaRegHeart />}
               </button>
+
+
+
+
 
             </div>
 
