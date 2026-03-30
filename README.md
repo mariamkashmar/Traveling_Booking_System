@@ -40,19 +40,45 @@ This project focuses on creating a **clean, user-friendly, and responsive interf
 src
 │
 ├── Components
-│   ├── Navbar
-│   ├── Sidebar
-│   ├── Cards
+│   ├── AboutUs
+│   ├── AppDev
+│   ├── AttractionandTours
+│   ├── BookNow
+│   ├── Cars
+│   ├── CustomerSupport
+│   ├── Deals
+│   ├── Favorites
+│   ├── FindYourProperty
+│   ├── Flights
+│   ├── Header
+│   ├── Hero
+│   ├── NewUserOffers
+│   ├── Packages
+│   ├── PaymentMethod
+│   ├── SideBar
+│   ├── Signing
+│   ├── Tab
+│   ├── Trains
+│   ├── TravelGuides
+│   ├── WorldMap
 │
 ├── Pages
-│   ├── Flights
-│   ├── Hotels
-│   ├── Trains
-│   ├── Cars
-│   ├── AttractionsAndTours
-│   ├── Favorites
-│   ├── TravelGuides
-│   ├── CustomerSupport
+│   ├── Aboutus
+│   ├── AttractionandTour
+│   ├── AuthPage
+│   ├── Book
+│   ├── Car
+│   ├── Favorite
+│   ├── Flight
+│   ├── Home
+│   ├── Map
+│   ├── MobileApp
+│   ├── Package
+│   ├── Payment
+│   ├── PropertyFinding
+│   ├── SupportCustomer
+│   ├── Train
+│   ├── TravelGuide
 │
 ├── Utils
 │   ├── FavoritesUtils.js
@@ -110,6 +136,25 @@ The application includes several main sections:
 * Travel Guides
 * Favorites
 * Customer Support
+
+---
+
+## 📷 Pages
+
+The application includes several pages, some of them:
+
+### Home Page
+![Home Page](Screenshots/HomePage.png)
+
+### Packages Page
+![Packages](Screenshots/PackagesPage.png)
+
+### Flights Page
+![Flights](Screenshots/FlightsPage.png)
+
+### Customer Support
+![Customer Support](Screenshots/CustomerSupportPage.png)
+
 
 ---
 
