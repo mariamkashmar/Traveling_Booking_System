@@ -144,16 +144,16 @@ The application includes several main sections:
 The application includes several pages, some of them:
 
 ### Home Page
-![Home Page](Screenshots/HomePage.png)
+![Home Page](./Screenshots/HomePage.png)
 
 ### Packages Page
-![Packages](Screenshots/PackagesPage.png)
+![Packages](./Screenshots/PackagesPage.png)
 
 ### Flights Page
-![Flights](Screenshots/FlightsPage.png)
+![Flights](./Screenshots/FlightsPage.png)
 
 ### Customer Support
-![Customer Support](Screenshots/CustomerSupportPage.png)
+![Customer Support](./Screenshots/CustomerSupportPage.png)
 
 
 ---
