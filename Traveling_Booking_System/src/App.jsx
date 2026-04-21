@@ -15,6 +15,8 @@ import TravelGuide from './Pages/TravelGuide'
 import Package from './Pages/Package'
 import Book from './Pages/Book'
 import Favorite from './Pages/Favorite'
+import Bookings from './Pages/Bookings'
+import MyBooking from './Pages/MyBooking'
 
 function App() {
   return (
@@ -35,6 +37,8 @@ function App() {
         <Route path='/Packages' element={<Package />} />
         <Route path='/BookNow' element={<Book />} />
         <Route path='/Favorites' element={<Favorite />} />
+        <Route path='/Booking' element={<Bookings/>} />
+        <Route path='/MyBookings' element={<MyBooking/>} />
 
 
 

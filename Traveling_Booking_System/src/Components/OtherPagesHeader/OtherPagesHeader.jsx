@@ -26,8 +26,8 @@ export default function Header() {
             <Link to="/Flights" className="nav-link">Flights</Link>
             <Link to="/Trains" className="nav-link">Trains</Link>
             <Link to="/Cars" className="nav-link">Cars</Link>
-            <Link to="/SignPage" className="reservation-link">
-              <button className="primary-btn">My Reservations</button>
+            <Link to="/MyBookings" className="reservation-link">
+              <button className="primary-btn">My Bookings</button>
             </Link>
           </nav>
         </div>

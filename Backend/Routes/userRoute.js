@@ -1,7 +1,13 @@
-const express = require ('express');
-const router =express.Router();
+const express = require('express');
+const { insertUserValidation } = require('../Validators/userValidation');
+const { insertUserController, signInController, getUserByIdController, getUsersController } = require('../Controllers/userController');
+const router = express.Router();
 
-//express gives up to ability to do routing
-router.post('/signup', insertUserValidation, insertUserController);
 
-module.exports=router; //all routers are exported then
+router.post('/signup',insertUserValidation, insertUserController);
+router.post('/signin', signInController);
+router.get('/getUserById/:id',getUserByIdController);
+router.get('/admin/getAllUsers',getUsersController);
+
+
+module.exports = router;

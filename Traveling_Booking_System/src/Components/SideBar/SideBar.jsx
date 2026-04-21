@@ -48,15 +48,16 @@ export default function Sidebar() {
 
       <hr className="sidebar-divider" />
 
-      <div className="sidebar-item">
+      <Link to='/MyBookings' className="sidebar-item">
         <FaSuitcaseRolling className="icon" />
-        <span className="label">Private Tours</span>
-      </div>
-
-      <div className="sidebar-item">
+        <span className="label">My Bookings</span>
+      </Link>
+      
+      
+      <Link to="/ListingProperties" className="sidebar-item">
         <FaUserFriends className="icon" />
-        <span className="label">Group Tours</span>
-      </div>
+        <span className="label">Add your Property</span>
+      </Link>
 
       <hr className="sidebar-divider" />
 
