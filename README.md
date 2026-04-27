@@ -36,58 +36,103 @@ This project focuses on creating a **clean, user-friendly, and responsive interf
 
 ## 📂 Project Structure
 
-```
-src
+MYPROJECT
 │
-├── Components
-│   ├── AboutUs
-│   ├── AppDev
-│   ├── AttractionandTours
-│   ├── BookNow
-│   ├── Cars
-│   ├── CustomerSupport
-│   ├── Deals
-│   ├── Favorites
-│   ├── FindYourProperty
-│   ├── Flights
-│   ├── Header
-│   ├── Hero
-│   ├── NewUserOffers
-│   ├── Packages
-│   ├── PaymentMethod
-│   ├── SideBar
-│   ├── Signing
-│   ├── Tab
-│   ├── Trains
-│   ├── TravelGuides
-│   ├── WorldMap
+├── Backend
+│   │
+│   ├── Config
+│   │   ├── Config.js
+│   │
+│   ├── Controllers
+│   │   ├── bookingController.js
+│   │   ├── packageController.js
+│   │   ├── propertyController.js
+│   │   └── userController.js
+│   │
+│   ├── Models
+│   │   ├── bookingModel.js
+│   │   ├── packageModel.js
+│   │   ├── propertyModel.js
+│   │   └── userModel.js
+│   │
+│   ├── Routes
+│   │   ├── bookingRoute.js
+│   │   ├── packageRoute.js
+│   │   ├── propertyRoute.js
+│   │   └── userRoute.js
+│   │
+│   ├── Services
+│   │   ├── bookingService.js
+│   │   ├── packageService.js
+│   │   ├── paymentService.js
+│   │   ├── propertyService.js
+│   │   └── userServices.js
+│   │
+│   ├── Validators
+│   │   ├── packageValidation.js
+│   │   ├── paymentValidation.js
+│   │   ├── propertyValidation.js
+│   │   └── userValidation.js
+│   │
+│   └── app.js
 │
-├── Pages
-│   ├── Aboutus
-│   ├── AttractionandTour
-│   ├── AuthPage
-│   ├── Book
-│   ├── Car
-│   ├── Favorite
-│   ├── Flight
-│   ├── Home
-│   ├── Map
-│   ├── MobileApp
-│   ├── Package
-│   ├── Payment
-│   ├── PropertyFinding
-│   ├── SupportCustomer
-│   ├── Train
-│   ├── TravelGuide
+├── Traveling_Booking_System
+│   │
+│   ├── src
+│   │   │
+│   │   ├── Components
+│   │   │   ├── AboutUs
+│   │   │   ├── AppDev
+│   │   │   ├── AttractionandTours
+│   │   │   ├── BookNow
+│   │   │   ├── Booking
+│   │   │   ├── Cars
+│   │   │   ├── CustomerSupport
+│   │   │   ├── Deals
+│   │   │   ├── Favorites
+│   │   │   ├── FindYourProperty
+│   │   │   ├── Flights
+│   │   │   ├── Header
+│   │   │   ├── Hero
+│   │   │   ├── MyBookings
+│   │   │   ├── NewUserOffers
+│   │   │   ├── OtherPagesHeader
+│   │   │   ├── Packages
+│   │   │   ├── PaymentMethod
+│   │   │   ├── SideBar
+│   │   │   ├── Signing
+│   │   │   ├── Tab
+│   │   │   ├── Trains
+│   │   │   ├── TravelGuides
+│   │   │   └── WorldMap
+│   │   │
+│   │   ├── Pages
+│   │   │   ├── Aboutus.jsx
+│   │   │   ├── AttractionandTour.jsx
+│   │   │   ├── AuthPage.jsx
+│   │   │   ├── Book.jsx
+│   │   │   ├── Bookings.jsx
+│   │   │   ├── Car.jsx
+│   │   │   ├── Favorite.jsx
+│   │   │   ├── Flight.jsx
+│   │   │   ├── Home.jsx
+│   │   │   ├── Map.jsx
+│   │   │   ├── MobileApp.jsx
+│   │   │   ├── MyBooking.jsx
+│   │   │   ├── Package.jsx
+│   │   │   ├── Payment.jsx
+│   │   │   ├── PropertyFinding.jsx
+│   │   │   ├── SupportCustomer.jsx
+│   │   │   ├── Train.jsx
+│   │   │   └── TravelGuide.jsx
+│   │   ├── Utils
+│   │   │   └── FavoritesUtils.jsx
+│   │   ├── App.js
+│   │   └── index.js
 │
-├── Utils
-│   ├── FavoritesUtils.js
-│
-├── App.js
-└── index.js
-```
-
----
+├── package.json
+├── package-lock.json
+└── README.md
 
 ## 🚀 Getting Started
 
