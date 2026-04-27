@@ -35,6 +35,7 @@ This project focuses on creating a **clean, user-friendly, and responsive interf
 ---
 
 ## 📂 Project Structure
+```
 
 MYPROJECT
 │
@@ -133,6 +134,7 @@ MYPROJECT
 ├── package.json
 ├── package-lock.json
 └── README.md
+```
 
 ## 🚀 Getting Started
 
