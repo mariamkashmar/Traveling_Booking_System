@@ -7,8 +7,8 @@ This project focuses on creating a **clean, user-friendly, and responsive interf
 
 ---
 
-## ✨ Features
-# User Features
+# ✨ Features
+## User Features
 
 * ✈️ Flights booking page
 * 🚆 Trains booking page
@@ -24,7 +24,7 @@ This project focuses on creating a **clean, user-friendly, and responsive interf
 
 ---
 
-# Backend Features
+## Backend Features
 *🔐 User authentication system
 *📦 Travel package management
 *📅 Booking system
@@ -34,8 +34,8 @@ This project focuses on creating a **clean, user-friendly, and responsive interf
 
 ---
 
-## 🛠️ Technologies Used
-# Frontend
+# 🛠️ Technologies Used
+## Frontend
 
 * React.js
 * JavaScript (ES6+)
@@ -46,7 +46,7 @@ This project focuses on creating a **clean, user-friendly, and responsive interf
 * Axios
   
 ---
-# Backend
+## Backend
 * Node.js
 * Express.js
 * MongoDB
@@ -56,7 +56,8 @@ This project focuses on creating a **clean, user-friendly, and responsive interf
 
 ## 🧪 API Testing
 * Postman
-  
+* All API endpoints were tested using Postman before integrating them with the frontend.
+![Home Page](Traveling_Booking_System/Screenshots/HomePage.png)
 ---
 
 
