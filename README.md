@@ -57,6 +57,7 @@ This project focuses on creating a **clean, user-friendly, and responsive interf
 ## 🧪 API Testing
 * Postman
 * All API endpoints were tested using Postman before integrating them with the frontend.
+  
 ### To get all bookings:  
 
 ![To get All Bookings:](Traveling_Booking_System/Screenshots/SS1.png)
@@ -69,12 +70,21 @@ This project focuses on creating a **clean, user-friendly, and responsive interf
 
 ## 💾 Database
 * For database, MongoDB Compass was used.
-* 
+* Connect to localhost:27017
+  
+### Database Structure:
+![All DB](Traveling_Booking_System/Screenshots/SS3.png)
+
+### Users:
+![Users](Traveling_Booking_System/Screenshots/Users.png)
+
+### Packages:
+![Packages](Traveling_Booking_System/Screenshots/Packages.png)
 
 
 
   
-## 📂 Project Structure
+# 📂 Project Structure
 ```
 
 MYPROJECT
@@ -183,20 +193,20 @@ MYPROJECT
 ```
 git clone https://github.com/mariamkashmar/Traveling-Booking-System.git
 ```
-
-### Navigate to the project folder
+### Frontend Setup
+#### Navigate to the project folder
 
 ```
 cd Traveling-Booking-System
 ```
 
-### Install dependencies
+#### Install dependencies
 
 ```
 npm install
 ```
 
-### Run the development server
+#### Run the development server
 
 ```
 npm run dev
@@ -206,6 +216,29 @@ The application will run on:
 
 ```
 http://localhost:5173/
+```
+### Navigate to Backend folder
+
+```
+cd Backend
+```
+
+#### Install dependencies
+
+```
+npm install
+```
+
+#### Run the development server
+
+```
+node server.js
+```
+
+Backend will run on:
+
+```
+http://localhost:5000/
 ```
 
 ---
