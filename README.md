@@ -57,8 +57,20 @@ This project focuses on creating a **clean, user-friendly, and responsive interf
 ## 🧪 API Testing
 * Postman
 * All API endpoints were tested using Postman before integrating them with the frontend.
-![Home Page](Traveling_Booking_System/Screenshots/HomePage.png)
+### To get all bookings:  
+
+![To get All Bookings:](Traveling_Booking_System/Screenshots/SS1.png)
+
+### Signing Up:
+
+![Sign Up](Traveling_Booking_System/Screenshots/SS2.png)
+
 ---
+
+## 💾 Database
+* For database, MongoDB Compass was used.
+* 
+
 
 
   
